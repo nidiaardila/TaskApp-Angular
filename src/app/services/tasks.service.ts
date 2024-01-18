@@ -17,9 +17,13 @@ export class TasksService {
     localStorage.setItem(this.localStorageKey, JSON.stringify(tasks));
   }
 
-  deleteTask(index: number){
+  deleteTask(index: number):void{
     const tasks = this.getTasks();
     tasks.splice(index, 1);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(tasks));
+  }
+
+  updateTasks(tasks: string[]): void {
     localStorage.setItem(this.localStorageKey, JSON.stringify(tasks));
   }
 }
