@@ -17,9 +17,8 @@ export class TasksListComponent implements OnInit {
   tasksList: string[] =[];
   newTask: string = '';
 
- editIndex: number | null = null;
+  editIndex: number | null = null;
   
-
 
   //injectar el servicio
   private _tasksService = inject(TasksService);
@@ -39,11 +38,7 @@ export class TasksListComponent implements OnInit {
     this._tasksService.deleteTask(index);
     this.tasksList = this._tasksService.getTasks();
   }
-
-  // editTask(index: number): void {
-  //   this.newTask = this.tasksList[index];
-  //   this.editIndex = index;
-  // }
+  
 
   editTask(index: number): void {
     this.newTask = this.tasksList[index];
